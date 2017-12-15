@@ -19,7 +19,7 @@ imOrg = im.copy()
 
 
 def get_boundary_points(x, y):
-    tck, u = interpolate.splprep([x, y], s=0, per=1)
+    tck, u = interpolate.splprep([x, y], s=0, per=1) """ get b-spline curve """
     unew = np.linspace(u.min(), u.max(), 1000)
     xnew, ynew = interpolate.splev(unew, tck, der=0)
     tup = c_[xnew.astype(int), ynew.astype(int)].tolist()
